@@ -5,10 +5,12 @@ from flask import (
 )
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from flaskr.db import get_db
+from flaskdev.db import get_db
 
+# namespace
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
+# routes
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
     if request.method == 'POST':
